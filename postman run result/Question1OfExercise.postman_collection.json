@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "f75ab211-f482-4e95-bbe7-605a3ff821ff",
+		"name": "Question1OfExercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Question1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n        \"id\": 101,\n\n        \"firstName\": \"Harry\",\n\n        \"lastName\": \"Potter\",\n\n        \"email\": \"fas1.orci.luctus@Duisac.net\",\n\n        \"programme\": \"Financial Analysis\",\n\n        \"courses\": [\n\n            \"Accounting\",\n\n            \"Statistics\"\n\n        ]\n\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/list?programme =Financial Analysis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"list"
+					],
+					"query": [
+						{
+							"key": "programme ",
+							"value": "Financial Analysis"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf1382a-4e4d-48d1-9327-455eeb15291e",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"faucibus.orci.luctus@Duisac.net\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n        \"id\": 102,\n\n        \"firstName\": \"Murph\",\n\n        \"lastName\": \"Holme\",\n\n        \"email\": \"faucibus.orci.luctus@Duisac.net\",\n\n        \"programme\": \"Financial Analysis\",\n\n        \"courses\": [\n\n            \"Accounting\",\n\n            \"Statistics\"\n\n        ]\n\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "001e9a65-4667-431e-a39c-b8fbe24f6766",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"@\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n        \"id\": 103,\n\n        \"firstName\": \"Murp\",\n\n        \"lastName\": \"Holm\",\n\n        \"email\": \"faucibus.orci.luctusDuisac.net\",\n\n        \"programme\": \"Financial Analysis\",\n\n        \"courses\": [\n\n            \"Accounting\",\n\n            \"Statistics\"\n\n        ]\n\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5586a202-3f60-4c5a-a327-6b2f979a1007",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Computer Science\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/list?programme=Computer Science",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"list"
+					],
+					"query": [
+						{
+							"key": "programme",
+							"value": "Computer Science"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question6b",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ec3781bc-6b89-42de-b944-314be949f2c3",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Criminology\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/list?programme=Criminology",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"list"
+					],
+					"query": [
+						{
+							"key": "programme",
+							"value": "Criminology"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
